@@ -1,7 +1,7 @@
 def max_slice(a)
   ending, slice = 0, 0
   a.each do |el|
-    ending = [0, ending + el].max
+    ending = [el, ending + el].max
     slice = [slice, ending].max
   end
   slice
