@@ -12,9 +12,12 @@ def leader(a)
       end
     end
   end
-  candidate = value if size > 0
+  return -1 if size.zero?
+
+  candidate = value
   count = a.reduce(0) {|sum, el| el == candidate ? sum + 1 : sum }
   count > a.size / 2 ? candidate : -1
 end
 
 puts leader([4,6,6,6,6,8,8])
+puts leader([1,2,3,4,5,6])
